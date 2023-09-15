@@ -1,17 +1,9 @@
 var storedItem = localStorage.getItem("storedItem");
-
 function save(){
-    var Item = document.getElementById("input").value;
-    console.log("item", Item);
-    localStorage.setItem("storedItem", Item);
+    var number = document.getElementById("input").value;
+    localStorage.setItem("storedItem", number);
     localStorage.getItem("StoredItem");
 
-// function get(){
-//     document.getElementById("openedText").innerHTML = storedItem + "opened";
-
-// }
-var number = localStorage.storedItem;
-console.log("ss", number);
 function converter(number) {
     let dictionary = {
         1: "ერთი",
@@ -70,7 +62,6 @@ function converter(number) {
                 }else{
                     finalString += converter(number-number%1000).slice(0, -1) + converter(number%1000)
                 }
-                
             }
         }else if(number >= 1000000 && number <= 1000000000){
             var prefix = ""
@@ -85,7 +76,7 @@ function converter(number) {
         }else if(number >= 1000000000 && number < 1000000000){
             var prefix = ""
             if(Math.floor(number/1000000000) > 1 ){
-                // prefix = converter(Math.floor(number/1000000000))
+                prefix = converter(Math.floor(number/1000000000))
             }
             if(number%1000000000 == 0){
                 finalString += prefix + converter(1000000000)
@@ -97,5 +88,4 @@ function converter(number) {
     return finalString
 }
 document.getElementById("openedText").innerHTML=(converter(number));
-console.log(converter(151080008))
 }
