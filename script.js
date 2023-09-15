@@ -1,3 +1,17 @@
+var storedItem = localStorage.getItem("storedItem");
+
+function save(){
+    var Item = document.getElementById("input").value;
+    console.log("item", Item);
+    localStorage.setItem("storedItem", Item);
+    localStorage.getItem("StoredItem");
+
+// function get(){
+//     document.getElementById("openedText").innerHTML = storedItem + "opened";
+
+// }
+var number = localStorage.storedItem;
+console.log("ss", number);
 function converter(number) {
     let dictionary = {
         1: "ერთი",
@@ -82,4 +96,6 @@ function converter(number) {
     }
     return finalString
 }
+document.getElementById("openedText").innerHTML=(converter(number));
 console.log(converter(151080008))
+}
